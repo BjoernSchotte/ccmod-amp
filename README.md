@@ -1,5 +1,10 @@
 # ccmod-amp
 
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+![Claude Code mod](https://img.shields.io/badge/Claude%20Code-mod-d97757)
+![cliamp 2.x](https://img.shields.io/badge/cliamp-2.x-6cc56c)
+![English · Deutsch](https://img.shields.io/badge/lang-EN%20%C2%B7%20DE-f5c33b)
+
 **Internet radio inside Claude Code.** A [cliamp](https://github.com/bjarneo/cliamp) sidebar with a live equalizer, favorites, 58,000 stations to search, a mini player above the prompt, a song log, focus sessions, and music that gets out of the way when Claude needs you.
 
 ![The cliamp sidebar docked beside a Claude Code session](docs/screenshots/sidebar.png)
@@ -7,11 +12,6 @@
 ```
 /plugin install cliamp --marketplace BjoernSchotte/ccmod-amp
 ```
-
-[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-![Claude Code mod](https://img.shields.io/badge/Claude%20Code-mod-d97757)
-![cliamp 2.x](https://img.shields.io/badge/cliamp-2.x-6cc56c)
-![English · Deutsch](https://img.shields.io/badge/lang-EN%20%C2%B7%20DE-f5c33b)
 
 ---
 
