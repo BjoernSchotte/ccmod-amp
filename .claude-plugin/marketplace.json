@@ -1,0 +1,14 @@
+{
+  "name": "ccmod-amp",
+  "owner": { "name": "Björn Schotte", "url": "https://github.com/BjoernSchotte" },
+  "description": "cliamp internet radio inside Claude Code: a sidebar, a mini player, favorites, discovery, focus mode and a radio tool for Claude",
+  "plugins": [
+    {
+      "name": "cliamp",
+      "source": "./",
+      "description": "Listen to cliamp radio while you code, without leaving Claude Code",
+      "license": "Apache-2.0",
+      "keywords": ["radio", "music", "cliamp", "focus", "mod"]
+    }
+  ]
+}

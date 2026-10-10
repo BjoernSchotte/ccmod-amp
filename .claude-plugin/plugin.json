@@ -1,0 +1,57 @@
+{
+  "name": "cliamp",
+  "version": "0.2.0",
+  "description": "cliamp radio in Claude Code: sidebar with favorites, search and discovery, mini player, song log, focus mode, ducking and a radio tool for Claude",
+  "author": {
+    "name": "Björn Schotte"
+  },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "statusline": {
+      "type": "string",
+      "title": "Status line",
+      "description": "What the status line shows: full, title, spectrum or off (the mini player above the prompt shows it already)",
+      "default": "off",
+      "options": [
+        "off",
+        "full",
+        "title",
+        "spectrum"
+      ]
+    },
+    "duckOnAsk": {
+      "type": "boolean",
+      "title": "Quieter on permission prompts",
+      "description": "Lower the volume by 12 dB while Claude waits for your approval",
+      "default": true
+    },
+    "dipOnTurnEnd": {
+      "type": "boolean",
+      "title": "Dip when a turn ends",
+      "description": "A short volume dip as a signal that Claude has finished",
+      "default": true
+    },
+    "autostart": {
+      "type": "boolean",
+      "title": "Start the daemon on demand",
+      "description": "Start cliamp --daemon when the sidebar opens or a station is chosen",
+      "default": false
+    },
+    "moods": {
+      "type": "string",
+      "title": "Moods",
+      "description": "mood=station pairs for /cliamp mood, separated by ;",
+      "default": "focus=Lofi;calm=Meditative;debug=Meditative;refactor=Synthwave;ship=EDM;retro=Amiga"
+    }
+  },
+  "homepage": "https://github.com/BjoernSchotte/ccmod-amp",
+  "repository": "https://github.com/BjoernSchotte/ccmod-amp",
+  "license": "Apache-2.0",
+  "keywords": [
+    "radio",
+    "music",
+    "cliamp",
+    "focus",
+    "mod"
+  ]
+}
