@@ -31,7 +31,7 @@
   - [Lyrics](#lyrics)
   - [Focus mode](#focus-mode)
   - [Moods](#moods)
-  - [Quiet when Claude needs you](#quiet-when-claude-needs-you)
+  - [Quiet when Claude needs you (opt-in)](#quiet-when-claude-needs-you-opt-in)
   - [Ask Claude to DJ](#ask-claude-to-dj)
   - [Languages](#languages)
 - [Keyboard reference](#keyboard-reference)
@@ -52,7 +52,7 @@ You already live in Claude Code while you build. Switching windows to change a s
 
 - **Glanceable.** What's playing, on which station, with a live equalizer, without leaving the terminal.
 - **Keyboard first.** Every control is one key once the sidebar has focus.
-- **Aware of Claude.** The music dips when a turn finishes and gets quieter while Claude waits for your approval, so you notice.
+- **Aware of Claude, if you want.** Opt in and the music dips when a turn finishes and gets quieter while Claude waits for your approval.
 - **Out of the way.** No cliamp on the machine? The mod stays dormant and registers nothing.
 
 ## Requirements
@@ -196,12 +196,12 @@ Plays the station mapped to a mood. The defaults:
 
 Map your own in [`moods`](#configuration), for example `focus=Lofi;deploy=SomaFM Groove Salad`. A mood names any station: a favorite, a picked one, a cliamp channel, or a Radio Browser search term.
 
-### Quiet when Claude needs you
+### Quiet when Claude needs you (opt-in)
 
 - **Permission prompts:** while Claude waits for your approval, the music is 12 dB quieter, and it comes back the moment you answer. Prompts that an auto-mode classifier or a rule answers within 1.5 s never touch the volume.
 - **Turn end:** a short dip when Claude finishes, so you hear it's your turn.
 
-Both are on by default and can be switched off under [Configuration](#configuration). The volume to return to is saved, so even a crash mid-duck never leaves your music quiet.
+Both are **off by default**: the mod never touches your volume unless you ask it to. Turn them on with `/config` ([Configuration](#configuration)). The volume to return to is saved, so even a crash mid-duck never leaves your music quiet.
 
 ### Ask Claude to DJ
 
@@ -261,8 +261,8 @@ Mini player (the band above the prompt, `ctrl+x tab`): `p` play/pause, `o` open 
 | Option | Default | |
 |---|---|---|
 | `statusline` | `off` | `off`, `full`, `title` or `spectrum` in Claude Code's status line (the mini player shows it already) |
-| `duckOnAsk` | `true` | 12 dB quieter while Claude waits for your approval |
-| `dipOnTurnEnd` | `true` | a short dip when a turn ends |
+| `duckOnAsk` | `false` | 12 dB quieter while Claude waits for your approval |
+| `dipOnTurnEnd` | `false` | a short dip when a turn ends |
 | `autostart` | `false` | start `cliamp --daemon` when the sidebar opens or a station is chosen |
 | `moods` | see [Moods](#moods) | `mood=station` pairs separated by `;` |
 
@@ -275,7 +275,7 @@ Claude Code ── hooks module (register.tsx) ──┬── cliamp remote cal
                                              └── HTTPS                    Radio Browser, listener counts
 ```
 
-- One Claude Code mod built on function hooks: a sidebar `Pane`, the band above the prompt, a slash command, a tool, and hooks on `tool.check`, `tool.call` and `turn.complete` for the ducking.
+- One Claude Code mod built on function hooks: a sidebar `Pane`, the band above the prompt, a slash command, a tool, and hooks on `tool.check`, `tool.call` and `turn.complete` for the optional ducking.
 - Every control is a cliamp V2 IPC operation through its CLI. State changes arrive as events; a 10 s poll only notices the player coming and going.
 - Favorites, picked stations, the song log, the language and a running focus timer live in the mod's store. What the UI draws lives in session state, so a hot reload or `/clear` keeps it.
 

@@ -731,7 +731,7 @@ export const register: Register = (on, options) => {
 
   on('tool.check', async ($, e, next) => {
     const verdict = await next(e)
-    if (verdict.decision === 'ask' && opts.duckOnAsk !== false && e.tool_use_id) duckIfStillWaiting($, e.tool_use_id)
+    if (verdict.decision === 'ask' && opts.duckOnAsk === true && e.tool_use_id) duckIfStillWaiting($, e.tool_use_id)
     return verdict
   }).catch(($, e, next) => next(e))
 
@@ -744,7 +744,7 @@ export const register: Register = (on, options) => {
   on('turn.complete', async ($, e, next) => {
     waiting.clear()
     if (duckedFrom !== undefined) await serial($, () => unduck($))
-    else if (opts.dipOnTurnEnd !== false) void dip($)
+    else if (opts.dipOnTurnEnd === true) void dip($)
     return next(e)
   })
 

@@ -37,7 +37,7 @@ async function start($: Engine, clock: MockClock) {
   await clock.settle()
 }
 
-test('an ask answered at once (auto mode) never touches the volume', async ($, on) => {
+test('an ask answered at once (auto mode) never touches the volume', { options: { duckOnAsk: true } }, async ($, on) => {
   const clock = mock.clock(on)
   mock.store(on)
   const volumes: number[] = []
@@ -51,7 +51,7 @@ test('an ask answered at once (auto mode) never touches the volume', async ($, o
   expect(volumes.filter(v => v !== 0)).toEqual([])
 })
 
-test('an ask still waiting after 1.5 s ducks, and the answer restores the volume', async ($, on) => {
+test('an ask still waiting after 1.5 s ducks, and the answer restores the volume', { options: { duckOnAsk: true } }, async ($, on) => {
   const clock = mock.clock(on)
   mock.store(on)
   const volumes: number[] = []
@@ -66,4 +66,20 @@ test('an ask still waiting after 1.5 s ducks, and the answer restores the volume
   await $.tool.call({ tool: 'Bash', input: {}, tool_use_id: 't2' } as never)
   await clock.settle()
   expect(volumes.at(-1)).toBe(0)
+})
+
+test('by default an ask, however long it waits, never touches the volume', async ($, on) => {
+  const clock = mock.clock(on)
+  mock.store(on)
+  const volumes: number[] = []
+  fakeCliamp(on, volumes)
+  await start($, clock)
+
+  await $.tool.check({ tool: 'Bash', input: {}, tool_use_id: 't3' } as never)
+  await clock.advance(60_000)
+  await clock.settle()
+  await $.tool.call({ tool: 'Bash', input: {}, tool_use_id: 't3' } as never)
+  await $.turn.complete({ reason: 'end_turn', text: '', turnId: 'x' } as never).catch(() => {})
+  await clock.settle()
+  expect(volumes).toEqual([])
 })
