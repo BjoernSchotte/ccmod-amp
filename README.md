@@ -1,5 +1,6 @@
 # ccmod-amp
 
+[![Release](https://img.shields.io/github/v/release/BjoernSchotte/ccmod-amp)](https://github.com/BjoernSchotte/ccmod-amp/releases/latest)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 ![Claude Code mod](https://img.shields.io/badge/Claude%20Code-mod-d97757)
 ![cliamp 2.x](https://img.shields.io/badge/cliamp-2.x-6cc56c)
@@ -12,6 +13,8 @@
 ```
 /plugin install cliamp --marketplace BjoernSchotte/ccmod-amp
 ```
+
+[Latest release](https://github.com/BjoernSchotte/ccmod-amp/releases/latest) · [Changelog](CHANGELOG.md)
 
 ---
 
@@ -73,6 +76,8 @@ At a Claude Code prompt:
 ```
 /plugin install cliamp --marketplace BjoernSchotte/ccmod-amp
 ```
+
+[Latest release](https://github.com/BjoernSchotte/ccmod-amp/releases/latest) · [Changelog](CHANGELOG.md)
 
 Answer `y` to add the marketplace and pick the **user** scope. The mod is active in that session at once and in every session after.
 
