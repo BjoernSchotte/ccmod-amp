@@ -7,7 +7,7 @@
 
 **Internet radio inside Claude Code.** A [cliamp](https://github.com/bjarneo/cliamp) sidebar with a live equalizer, favorites, 58,000 stations to search, a mini player above the prompt, a song log, focus sessions, and music that gets out of the way when Claude needs you.
 
-![The cliamp sidebar docked beside a Claude Code session](docs/screenshots/sidebar.png)
+![The cliamp sidebar docked beside a Claude Code session](docs/screenshots/01-sidebar.png)
 
 ```
 /plugin install cliamp --marketplace BjoernSchotte/ccmod-amp
@@ -124,7 +124,7 @@ When a stream fails, the sidebar shows `✗ Stream: …` with `w` to retry.
 
 Close the sidebar and the radio stays visible: a one-line player sits above the prompt.
 
-![The song log and the mini player above the prompt](docs/screenshots/log-and-mini-player.png)
+![The song log and the mini player above the prompt](docs/screenshots/02-log-and-mini-player.png)
 
 It reads `♪ station · artist – title ▃▅▇▆▄` and has its own controls. **Click it** to reopen the sidebar, or press `ctrl+x tab` and then `o`. `p` plays and pauses from there too. It hides itself while nothing plays.
 
@@ -141,7 +141,7 @@ Prefer Claude Code's status line? Set [`statusline`](#configuration) to `full`, 
 
 Press `f`, type, `Enter`. The sidebar searches the [Radio Browser](https://www.radio-browser.info/) directory through cliamp and lists up to 15 stations with genre and country.
 
-![Searching the Radio Browser for jazz](docs/screenshots/search.png)
+![Searching the Radio Browser for jazz](docs/screenshots/03-search.png)
 
 - Pick one with its digit or `Enter`: it plays, the results close, and the station joins **STATIONS** for next time.
 - `x` closes the results without playing anything.
@@ -150,7 +150,7 @@ Press `f`, type, `Enter`. The sidebar searches the [Radio Browser](https://www.r
 
 At the bottom of the sidebar: **Trending**, **Near me** (Germany with the German UI, the US otherwise), and the tags **lofi**, **jazz**, **ambient**, **electronic**, **classical** and **news**. Each opens the 15 most-listened stations as results.
 
-![Discover and recently heard](docs/screenshots/discover.png)
+![Discover and recently heard](docs/screenshots/04-discover.png)
 
 ### Song log and hearts
 
@@ -175,7 +175,7 @@ Every song the stream announces is logged with time, artist, title and station, 
 
 Focus mode starts Lofi if nothing plays and shows a `◷ focus 25 min` countdown in the card. When the time is up it fades the music out over a few seconds, stops, restores the volume and tells you with a toast. The timer survives a restart of Claude Code.
 
-![Focus mode countdown](docs/screenshots/focus.png)
+![Focus mode countdown](docs/screenshots/05-focus.png)
 
 ### Moods
 
@@ -219,7 +219,7 @@ Claude can read what's playing, play a station by name, genre or mood, pause, re
 
 English and German. The mod follows Claude Code's `language` setting (`"language": "german"` gives you Deutsch); any other setting, or none, gives English.
 
-![The sidebar in German](docs/screenshots/german.png)
+![The sidebar in German](docs/screenshots/06-german.png)
 
 Switch any time with `t` in the sidebar or `/cliamp lang de|en`. Your choice is kept; `/cliamp lang auto` follows Claude's setting again.
 
