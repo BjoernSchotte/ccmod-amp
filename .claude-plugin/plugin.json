@@ -1,6 +1,6 @@
 {
   "name": "cliamp",
-  "version": "2026.10.1",
+  "version": "2026.10.2",
   "description": "cliamp radio in Claude Code: sidebar with favorites, search and discovery, mini player, song log, focus mode, ducking and a radio tool for Claude",
   "author": {
     "name": "Björn Schotte"

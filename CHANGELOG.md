@@ -2,6 +2,16 @@
 
 All notable changes to ccmod-amp. Versions are `YYYY.M.N` (N counts releases within the month).
 
+## 2026.10.2
+
+### Fixes
+
+- **radio:** the tool reads its arguments off the event, thanks @DcsPeterDickten (#1) (1b6e3f3)
+
+### Docs
+
+- link the install line to the latest release (ff2117e)
+
 ## 2026.10.1
 
 First release: internet radio inside Claude Code, driven by [cliamp](https://github.com/bjarneo/cliamp).
