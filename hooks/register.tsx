@@ -716,7 +716,7 @@ export const register: Register = (on, options) => {
   on('command.run', { command: 'cliamp' }, async ($, e) => ({ text: await runCommand($, e.args) }))
 
   on('tool.call', { tool: 'mcp__cliamp__radio' }, async ($, e) => {
-    const text = await radioTool($, e.input as Record<string, unknown>)
+    const text = await radioTool($, e)
     return { result: text, text }
   }).catch(($, e, next) => {
     if (next.called) return next(e)

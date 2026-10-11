@@ -71,3 +71,8 @@ test('fit cuts with an ellipsis', async () => {
   expect(fit('Synthwave', 20)).toBe('Synthwave')
   expect(fit('SomaFM Groove Salad', 10)).toBe('SomaFM Gr…')
 })
+
+test('the radio tool reads its arguments off the event, not off e.input (issue #1)', async $ => {
+  const r = await $.tool.call({ tool: 'mcp__cliamp__radio', action: 'now' })
+  expect(r.text).toBe('cliamp is not running.')
+})
